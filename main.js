@@ -12,7 +12,7 @@ ponto.addEventListener("click", interacao1);
 back.addEventListener("click", interacao1);
 
 
-const btnIcon = document.querySelector('[data-screen="1"] .cta .icon');
+const btnIcon = document.querySelector('[data-screen="1"] .cta .-horario');
 const screen2 = document.querySelector('[data-screen="2"]');
 
 function interacaoScreen(){

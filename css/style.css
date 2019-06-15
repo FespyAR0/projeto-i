@@ -20,7 +20,7 @@ body {
           transform: translate(-50%, 0%);
   display: block;
   background: url(../img/mapa.png) no-repeat;
-  background-color: white;
+  background-color: #fff;
   background-size: cover;
   position: absolute;
   padding-bottom: 10px;
@@ -104,7 +104,7 @@ body {
   width: 100%;
   padding: 10px 20px;
   position: absolute;
-  background: #777;
+  background: #212121;
   color: #fff;
   top: 450px;
   z-index: 2;
@@ -136,12 +136,20 @@ body {
   height: 36px;
   width: 36px;
   background-color: #fff;
-  background-image: url(../img/fav-icon.svg);
-  background-size: 28px 28px;
+  background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   display: block;
   border-radius: 100%;
   cursor: pointer;
+}
+
+.info-ponto .icon.-horario {
+  background-image: url(../img/horario-icon.svg);
+}
+
+.info-ponto .icon.-fav {
+  background-image: url(../img/fav-icon.svg);
 }
 
 .info-ponto button {
@@ -176,7 +184,7 @@ body {
 .features {
   height: 160px;
   width: 360px;
-  background: #fff;
+  background: #212121;
   position: absolute;
   bottom: 0;
   z-index: 2;
@@ -187,8 +195,8 @@ body {
   display: block;
   font-size: 14px;
   padding: 10px 0;
-  background: #F5F5F5;
-  color: #676565;
+  background: #06B552;
+  color: #fff;
 }
 
 .features .search {
@@ -198,7 +206,7 @@ body {
 .features .search input {
   display: block;
   width: 320px;
-  background: #F5F5F5;
+  background: #343434;
   border: none;
   padding: 10px 10px;
   margin: 15px auto;
@@ -216,13 +224,14 @@ body {
 }
 
 .features .fav {
+  color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 320px;
   margin: 0 auto 0px auto;
   padding: 10px 0;
-  border-top: 1px solid #f1f3f4;
+  border-top: 1px solid #343434;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -318,7 +327,7 @@ body {
   width: 100%;
   padding: 10px 20px;
   position: absolute;
-  background: #777;
+  background: #212121;
   color: #fff;
   top: 23px;
   z-index: 2;
@@ -341,8 +350,8 @@ body {
   font-size: 14px;
   padding: 10px 10px;
   margin-bottom: 10px;
-  background: #F5F5F5;
-  color: #676565;
+  background: #343434;
+  color: #fff;
 }
 
 .mobile-device[data-screen="2"] .info-horario span.titulo:nth-of-type(2) {
@@ -361,6 +370,10 @@ body {
   border-bottom: 1px solid #f1f3f4;
 }
 
+.mobile-device[data-screen="2"] .info-horario p {
+  font-size: 14px;
+}
+
 .mobile-device[data-screen="2"] .info-horario .descricao {
   font-size: 10px;
 }
@@ -368,11 +381,13 @@ body {
 .mobile-device[data-screen="2"] .info-horario button {
   display: block;
   height: 48px;
-  width: 140px;
+  width: 160px;
   border: none;
+  font-weight: bold;
   padding: 10px 20px;
   border-radius: 30px;
   margin: 0 auto;
   margin-top: 20px;
+  background: #06B552;
 }
 /*# sourceMappingURL=style.css.map */
