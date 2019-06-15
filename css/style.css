@@ -14,10 +14,10 @@ body {
 .mobile-device {
   height: 720px;
   width: 360px;
-  top: 50%;
+  top: 0%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, 0%);
+          transform: translate(-50%, 0%);
   display: block;
   background: url(../img/mapa.png) no-repeat;
   background-color: white;
@@ -297,10 +297,6 @@ body {
 
 .mobile-device[data-screen="2"] {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
   opacity: 0;
   z-index: 5;
   visibility: hidden;
