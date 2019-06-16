@@ -1,4 +1,4 @@
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: Ufes Sans;}
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Rubik', sans-serif;}
 
 $cor-principal: #06B552;
 $preto: #212121;
@@ -17,8 +17,8 @@ body{
     left: 50%;
     transform: translate(-50%,0%);
     display: block;
-    background: url(../img/mapa.png) no-repeat;
-    background-color: $branco;
+    background: url(../img/mapa-2.png) no-repeat;
+    background-color: #f1f3f4;
     background-size: cover;
     position: absolute;
     padding-bottom: 10px;
@@ -26,13 +26,11 @@ body{
 
 [data-screen="1"] .info-ponto{
     visibility: hidden;
-    transform: translate3d(0,50px,0);
+    transform: translate3d(0,100px,0);
     z-index: 1;
 }
 
 [data-screen="1"].act{
-    background-size: 540px auto;
-    transition: all .3s;
     display: block;
 }
 
@@ -52,45 +50,76 @@ body{
 }
 
 .android-bar{
-    height: 25px;
+    height: 24px;
     background: url(../img/android-bar.svg) no-repeat;
 }
 
 .btn-menu{
-    height: 48px;
-    width: 48px;
-    border-radius: 100%;
-    background: $branco;
-    display: block;
+    background: $preto;
+    display: flex;
     z-index: 3;
     position: relative;
-    box-shadow: 0px 0px 10px rgba(0,0,0,.1);
     cursor: pointer;
-    padding: 6px;
-    margin: 15px;
-    color: #676565;
-}
+    padding: 12px 15px;
+    color: $branco;
+    justify-content: space-between;
 
-.btn-menu span{
-    display: block;
-    height: 3px;
-    width: 20px;
-    margin: 9px auto;
-    background: currentColor;
-    &::after, &::before{
-        content:'';
+    h1{
+        font-size: 19px;
+    }
+
+    span{
+        margin-top: 4px;
         display: block;
-        height: 3px;
-        width: 20px;
-        margin: 7px auto;
-        position: absolute;
+        height: 2px;
+        width: 18px;
+        border-radius: 10px;
         background: currentColor;
+        &::after, &::before{
+            content:'';
+            display: block;
+            height: 2px;
+            width: 24px;
+            margin: 7px auto;
+            position: absolute;
+            background: currentColor;
+            border-radius: 10px;
+        }
+    
+        &::after{
+            margin-top: 14px;
+        }
     }
 
-    &::after{
-        margin-top: 14px;
+    .icon{
+        height: 24px;
+        width: 24px;
+        background: url(../img/report-icon.svg);
+        background-size: 24px;
+        background-color: transparent;
+    }
+
+}
+
+.icon{
+    height: 36px;
+    width: 36px;
+    background-color: $cinza;
+    background-size: 28px;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: block;
+    border-radius: 100%;
+    cursor: pointer;
+    &.-horario{
+        background-image: url(../img/horario-icon.svg);
+    }
+    &.-fav{
+        background-image: url(../img/fav-icon.svg);
     }
 }
+
+ 
 
 .info-ponto{
     height: 110px;
@@ -99,7 +128,7 @@ body{
     position: absolute;
     background: $preto;
     color: $branco;
-    top: 450px;
+    top: 440px;
     z-index: 2;
     display: flex;
     justify-content: space-between;
@@ -118,24 +147,6 @@ body{
         line-height: 1.5em; 
         max-width: 180px;
         margin-bottom: 10px;
-    }
-
-    .icon{
-        height: 36px;
-        width: 36px;
-        background-color: $branco;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        display: block;
-        border-radius: 100%;
-        cursor: pointer;
-        &.-horario{
-            background-image: url(../img/horario-icon.svg);
-        }
-        &.-fav{
-            background-image: url(../img/fav-icon.svg);
-        }
     }
     
     button{
@@ -169,7 +180,7 @@ body{
 }
 
 .features{
-    height: 160px;
+    height: 170px;
     width: 360px;
     background: $preto;
     position: absolute;
@@ -179,9 +190,9 @@ body{
     span.i{
         text-align: center;
         display: block;
-        font-size: 14px;
+        font-size: 12px;
         padding: 10px 0;
-        background: $cor-principal;
+        background: #343434;
         color: $branco;
     }
     
@@ -222,12 +233,21 @@ body{
         .item{
             display: flex;
             font-size: 14px;
+
+            span{
+                display: block;
+                margin-bottom: 4px;
+            }
+
+            p{ font-size: 12px; color: $cinza;}
+
             .icon{
                 height: 36px;
                 width: 36px;
-                background-color: #f1f1f1;
+                background-color: $cinza;
                 background-image: url(../img/fav-icon.svg);
-                background-size: 28px 28px;
+                background-repeat: no-repeat;
+                background-size: 28px;
                 background-position: center;
                 display: block;
                 border-radius: 100%;
@@ -250,34 +270,49 @@ body{
         
         .usuario{
             display: block;
-            height: 10px;
-            width: 10px;
+            height: 8px;
+            width: 8px;
             border-radius: 100%;
             background: #4285F4;
-            box-shadow: 0px 0px 0px 15px rgba(66,133,244,.16);
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%,-50%);
+            animation-name: e1;
+            animation-duration: 1s;
+            animation-fill-mode: both;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
         }
+
+        @keyframes e1{
+            from{ box-shadow: 0px 0px 0px 15px rgba(66,133,244,.24);}
+            to{ box-shadow: 0px 0px 0px 25px rgba(66,133,244,.04);}
+        }
+
 
         .ponto{
             height: 25px;
             width: 25px;
             background: url(../img/pontos-de-coleta.svg) no-repeat;
-            background-size: cover;
+            background-size: 14px;
+            background-color: $cinza;
+            background-position: center;
             border-radius: 100%;
             cursor: pointer;
             position: absolute;
             top: 220px;
             left: 220px;
+            transition: .3s;
 
             &.act{
                 height: 50px;
                 width: 50px;
-                top: 220px - 25;
-                bottom: 220px - 25;
-                transition: all .3s;
+                top: 220px - 10;
+                left: 220px - 10;
+                background-size: 29px;
+                transform: rotate(180deg);
+                transition: all .3s ease-in-out;
             }
         }
 }
@@ -310,35 +345,46 @@ body{
         justify-content: space-between;
     }
 
-    .info-horario{
+
+.info-horario{
     display: block;
-    width: 340px;
-    margin: 120px 10px 20px 10px;
+    width: 320px;
+    margin: 120px 20px 20px 20px;
 
-    span.titulo{
-        display: block;
-        font-size: 14px;
-        padding: 10px 10px;
-        margin-bottom: 10px;
-        background: #343434;
+    .titulo{
+        padding: 10px;
+        background: $cinza;
+        border-radius: 4px;
         color: $branco;
-        
-            &:nth-of-type(2){
-                margin-top: 40px;
-            }
+        display: flex;
+        align-items: center;
 
+        span{
+        font-size: 14px;
         }
 
-    div{ 
+        .t-lixo{
+            display: flex;
+            .icon{
+                height: 24px;
+                width: 24px;
+                margin-left: 10px;
+                background-color: $branco;
+            }
+        }
+
+    }
+
+    > div{ 
         display: flex; 
         justify-content: space-between;
-        padding-bottom: 10px;
+        padding: 0 10px 10px 10px;
         margin-bottom: 10px;
-        border-bottom: 1px solid #f1f3f4;
+        border-bottom: 1px solid #eaeaea;
     }
 
     p{
-        font-size: 14px;
+        font-size: 12px;
     }
 
     .descricao{
@@ -355,10 +401,18 @@ body{
         border-radius: 30px;
         margin: 0 auto;
         margin-top: 20px;
-        background: $cor-principal;
-    }
-
+        background: $preto;
+        color: $branco;
     }
 
 }
 
+}
+
+.-g{ background-color: #2ecc71 !important;}
+.-o{ background-color: #e67e22 !important;}
+.-b{ background-color: #3498db !important;}
+.-r{ background-color: #e74c3c !important;}
+.-hb{ background-color: #2c3e50 !important;}
+.-y{ background-color: #f1c40f !important;}
+.-r{ background-color: #e74c3c !important;}
