@@ -136,7 +136,7 @@ body {
   position: absolute;
   background: #212121;
   color: #fff;
-  top: 440px;
+  bottom: 170px;
   z-index: 2;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -196,7 +196,7 @@ body {
   width: 360px;
   background: #212121;
   position: absolute;
-  bottom: 0;
+  bottom: 0vh;
   z-index: 2;
 }
 
@@ -282,7 +282,7 @@ body {
 }
 
 .coleta {
-  height: 660px;
+  height: 720px;
   width: 100%;
   top: 0;
   left: 0;
@@ -493,5 +493,15 @@ body {
 
 .-r {
   background-color: #e74c3c !important;
+}
+
+@media (max-height: 719px) {
+  body {
+    overflow-y: hidden;
+  }
+  .mobile-device[data-screen="1"] {
+    height: 100vh;
+    background-size: 400px;
+  }
 }
 /*# sourceMappingURL=style.css.map */

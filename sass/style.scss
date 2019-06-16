@@ -5,6 +5,8 @@ $preto: #212121;
 $cinza: gray;
 $branco: #fff;
 
+$device-screen: 100vh;
+
 body{
     background: $cinza;
     overflow-x: hidden;
@@ -128,7 +130,7 @@ body{
     position: absolute;
     background: $preto;
     color: $branco;
-    top: 440px;
+    bottom: calc(-100vh * (-1vh / 170px));
     z-index: 2;
     display: flex;
     justify-content: space-between;
@@ -184,7 +186,7 @@ body{
     width: 360px;
     background: $preto;
     position: absolute;
-    bottom: 0;
+    bottom: 0vh;
     z-index: 2;
 
     span.i{
@@ -262,7 +264,7 @@ body{
 }
 
 .coleta{
-    height: 660px;
+    height: 720px;
     width: 100%;
     top: 0;
     left: 0;
@@ -416,3 +418,16 @@ body{
 .-hb{ background-color: #2c3e50 !important;}
 .-y{ background-color: #f1c40f !important;}
 .-r{ background-color: #e74c3c !important;}
+
+@media (max-height: 719px){
+
+    body{
+        overflow-y: hidden;
+    }
+
+    .mobile-device[data-screen="1"]{
+        height: 100vh;
+        background-size: 400px; 
+
+    }
+}
