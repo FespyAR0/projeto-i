@@ -31,3 +31,14 @@ back2.addEventListener("click", function (){
 })
 
 
+const abreMenu = document.querySelector('.btn-menu');
+const fechaMenu = document.querySelector('.m-l-btn');
+const menuLat = document.querySelector('.menu-lateral');
+
+function actMenuLat (){
+    menuLat.classList.toggle('act');
+}
+
+abreMenu.addEventListener("click", actMenuLat);
+fechaMenu.addEventListener("click", actMenuLat);
+

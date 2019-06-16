@@ -58,14 +58,13 @@ body {
   background: url(../img/android-bar.svg) no-repeat;
 }
 
-.btn-menu {
+.menu {
   background: #212121;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  z-index: 3;
+  z-index: 1;
   position: relative;
-  cursor: pointer;
   padding: 12px 15px;
   color: #fff;
   -webkit-box-pack: justify;
@@ -73,12 +72,17 @@ body {
           justify-content: space-between;
 }
 
-.btn-menu h1 {
+.menu h1 {
   font-size: 19px;
 }
 
-.btn-menu span {
-  margin-top: 4px;
+.menu .btn-menu {
+  padding-top: 4px;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.menu .btn-menu span {
   display: block;
   height: 2px;
   width: 18px;
@@ -86,7 +90,7 @@ body {
   background: currentColor;
 }
 
-.btn-menu span::after, .btn-menu span::before {
+.menu .btn-menu span::after, .menu .btn-menu span::before {
   content: '';
   display: block;
   height: 2px;
@@ -97,11 +101,11 @@ body {
   border-radius: 10px;
 }
 
-.btn-menu span::after {
+.menu .btn-menu span::after {
   margin-top: 14px;
 }
 
-.btn-menu .icon {
+.menu .icon {
   height: 24px;
   width: 24px;
   background: url(../img/report-icon.svg);
@@ -465,6 +469,132 @@ body {
   margin-top: 20px;
   background: #212121;
   color: #fff;
+}
+
+.menu-lateral {
+  position: fixed;
+  height: 100vh;
+  width: 360px;
+  top: 23px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  z-index: 6;
+  visibility: hidden;
+  overflow: hidden;
+}
+
+.menu-lateral.act {
+  visibility: visible;
+  background: rgba(0, 0, 0, 0.4);
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.menu-lateral.act .wrapper {
+  margin-left: 0%;
+  -webkit-transition: 1s ease;
+  transition: 1s ease;
+}
+
+.menu-lateral .m-l-btn {
+  width: 24px;
+  height: 28px;
+  top: 15px;
+  right: 15px;
+  position: absolute;
+  cursor: pointer;
+}
+
+.menu-lateral .m-l-btn span {
+  display: block;
+  height: 2px;
+  width: 18px;
+  background: gray;
+  margin-bottom: 12px;
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+  border-radius: 10px;
+  z-index: 10;
+  margin: 0 auto;
+}
+
+.menu-lateral .m-l-btn span:after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 18ppx;
+  background: gray;
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
+  border-radius: 10px;
+}
+
+.menu-lateral .wrapper {
+  display: block;
+  position: relative;
+  height: 720px;
+  width: 300px;
+  margin-left: -100%;
+  padding: 15px;
+  background: #fff;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  -webkit-box-shadow: 4px 0 10px 0px rgba(0, 0, 0, 0.24);
+          box-shadow: 4px 0 10px 0px rgba(0, 0, 0, 0.24);
+}
+
+.menu-lateral .wrapper div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.menu-lateral .wrapper .profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 60px;
+}
+
+.menu-lateral .wrapper .profile img {
+  height: 60px;
+  width: 60px;
+  background: #212121;
+  display: block;
+  border-radius: 100%;
+}
+
+.menu-lateral .wrapper .profile .p-info {
+  display: block;
+  margin-left: 15px;
+}
+
+.menu-lateral .wrapper .profile .p-info span {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.menu-lateral .wrapper .profile .p-info p {
+  font-size: 14px;
+}
+
+.menu-lateral .wrapper .link {
+  padding: 15px 0;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.menu-lateral .wrapper .link .icon {
+  height: 24px;
+  width: 24px;
+  margin-right: 15px;
 }
 
 .-g {

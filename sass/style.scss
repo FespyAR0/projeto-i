@@ -54,12 +54,11 @@ body{
     background: url(../img/android-bar.svg) no-repeat;
 }
 
-.btn-menu{
+.menu{
     background: $preto;
     display: flex;
-    z-index: 3;
+    z-index: 1;
     position: relative;
-    cursor: pointer;
     padding: 12px 15px;
     color: $branco;
     justify-content: space-between;
@@ -67,28 +66,33 @@ body{
     h1{
         font-size: 19px;
     }
-
-    span{
-        margin-top: 4px;
-        display: block;
-        height: 2px;
-        width: 18px;
-        border-radius: 10px;
-        background: currentColor;
-        &::after, &::before{
-            content:'';
+    .btn-menu{
+        padding-top: 4px;
+        cursor: pointer;
+        z-index: 3;
+        span{
             display: block;
             height: 2px;
-            width: 24px;
-            margin: 7px auto;
-            position: absolute;
-            background: currentColor;
+            width: 18px;
             border-radius: 10px;
-        }
+            background: currentColor;
+            
+            &::after, &::before{
+                content:'';
+                display: block;
+                height: 2px;
+                width: 24px;
+                margin: 7px auto;
+                position: absolute;
+                background: currentColor;
+                border-radius: 10px;
+            }
+            &::after{
+                margin-top: 14px;
+            }
+    }
     
-        &::after{
-            margin-top: 14px;
-        }
+        
     }
 
     .icon{
@@ -407,6 +411,110 @@ body{
 
 }
 
+}
+
+.menu-lateral{
+    position: fixed;
+    height: 100vh;
+    width: 360px;
+    top: 23px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 6;
+    visibility: hidden;
+    overflow: hidden;
+    &.act{
+        visibility: visible;
+        background: rgba(0,0,0,.4);
+        transition: .5s;
+        .wrapper{
+            margin-left: 0%;
+            transition: 1s ease;
+        }
+    }
+
+    .m-l-btn{
+        width: 24px;
+        height: 28px;
+        top: 15px;
+        right: 15px;
+        position: absolute;
+        cursor: pointer;
+        span{
+            display: block;
+            height: 2px;
+            width: 18px;
+            background: $cinza;
+            margin-bottom: 12px;
+            transform: rotate(-135deg);
+            border-radius: 10px;
+            z-index: 10;
+            margin: 0 auto;
+            &:after{
+                content: '';
+                display: block;
+                height: 2px;
+                width: 18ppx;
+                background: $cinza;
+                transform: rotate(270deg);
+                border-radius: 10px;
+            }
+        }
+        
+    }
+    
+    .wrapper{
+        display: block;
+        position: relative;
+        height: 720px;
+        width: 300px;
+        margin-left: -100%;
+        padding: 15px;
+        background: $branco;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        box-shadow: 4px 0 10px 0px rgba(0,0,0,.24);
+
+        div{
+            display: flex;
+            align-items: center;
+        }
+        
+        .profile{
+            display: flex;
+            align-items: center;
+            margin-bottom: 60px;
+            img{
+                height: 60px;
+                width: 60px;
+                background: $preto;
+                display: block;
+                border-radius: 100%;
+            }
+            .p-info{
+                display: block;
+                margin-left: 15px;
+                span{ 
+                    display: block;
+                    font-size: 16px; 
+                    margin-bottom: 6px;}
+                p{ font-size: 14px;}
+            }
+        }
+
+        .link{
+            padding: 15px 0;
+            border-bottom: 1px solid #eaeaea;
+            .icon{
+                height: 24px;
+                width: 24px;
+                margin-right: 15px;
+            }
+        }
+
+
+
+    }
 }
 
 .-g{ background-color: #2ecc71 !important;}
