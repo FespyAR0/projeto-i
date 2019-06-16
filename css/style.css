@@ -493,8 +493,8 @@ body {
 
 .menu-lateral.act .wrapper {
   margin-left: 0%;
-  -webkit-transition: .7s ease-in-out;
-  transition: .7s ease-in-out;
+  -webkit-transition: .7s ease-out;
+  transition: .7s ease-out;
 }
 
 .menu-lateral .m-l-btn {
