@@ -473,7 +473,7 @@ body {
 
 .menu-lateral {
   position: fixed;
-  height: 100vh;
+  height: 697px;
   width: 360px;
   top: 23px;
   left: 50%;
@@ -533,7 +533,7 @@ body {
 .menu-lateral .wrapper {
   display: block;
   position: relative;
-  height: 720px;
+  height: 697px;
   width: 300px;
   margin-left: -100%;
   padding: 15px;
